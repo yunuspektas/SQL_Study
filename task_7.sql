@@ -68,26 +68,16 @@ INSERT INTO ogrenci VALUES (17,'sema','sekmen','k','10b');
 
 
 
--- ------Örnek 1: Hangi isimden kaç tane olduğunu bulun.
-SELECT ograd,count(*) from ogrenci
-group by ograd;
--- ------ Örnek 2: Sınıflardaki öğrenci sayısını bulun
-SELECT sinif, count(*) from ogrenci
-group by sinif;
--- ------ Örnek 3: Her sınıftaki erkek ve kız öğrenci sayısını bulun.(cinsiyet ve sinifa göre grupla)
-SELECT sinif, cinsiyet, Count(*) as 'sayi' FROM ogrenci
-group by cinsiyet, sinif;
--- ------ Örnek 4: Her türden kaç tane kitap olduğunu listeleyiniz.
-SELECT turno,Count(idno) FROM kitap
-group by turno;
--- ------ Örnek 5: Her türdeki en fazla sayfa sayısı olan kitapları listeleyiniz.
-SELECT turno, MAX(sayfasayisi) FROM kitap
-group by turno;
+-- Task 1: Hangi isimden kaç tane olduğunu bulun.
 
--------- Örnek 6: Her türdeki en az sayfa sayısı olan kitapları listeleyiniz.
-SELECT turno, MIN(sayfasayisi) FROM kitap
-group by turno;
--------- Örnek 7***: Her türden kaç tane kitap olduğunu listeleyiniz.(Tür isimleri de olsun)
-select kitap_turu, (select count(turno) from kitap where islemler.turno=kitap.turno) as adet_sayisi
-from islemler
-group by kitap_turu;
+-- Task 2: Sınıflardaki öğrenci sayısını bulun
+
+-- Task 3: Her sınıftaki erkek ve kız öğrenci sayısını bulun.(cinsiyet ve sinifa göre grupla)
+
+-- Task 4: Her türden kaç tane kitap olduğunu listeleyiniz.
+
+-- Task 5: Her türdeki en fazla sayfa sayısı olan kitapları listeleyiniz.
+
+-- Task 6: Her türdeki en az sayfa sayısı olan kitapları listeleyiniz.
+
+-- Task 7***: Her türden kaç tane kitap olduğunu listeleyiniz.(Tür isimleri de olsun)

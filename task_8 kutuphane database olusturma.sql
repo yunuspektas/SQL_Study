@@ -254,43 +254,35 @@ ad varchar(20)
 );
 ​
 -- SORU01: sayfa sayisi  200'den büyük olan kitaplari bilgileri listele
-select kitapno, ad from kitap where sayfasayisi>200;
 ​
 -- SORU02: yazar no 45 olan kitabin sayisi yazdirin
-select ad,sayi,sayfasayisi from kitap where yazarno=45;
 ​
 -- SORU03: yazar no su 4 ile 9 arasinda olan yazar isimleriniz yazdirin 
-select yazarno,ad,soyad from yazar where yazarno>=4 and yazarno<=9;-- and yerine && de kullanilabilir
--- or yerine | veya || yazilabilri
-select yazarno,ad,soyad from yazar where  yazarno between 4 and 9; -- between ile ayni sorunu n cozumu
 ​
 -- soru charles dickens ile cengiz aytmatov arasindaki yazarlari listeleyin
-select yazarno,ad,soyad from yazar where ad between 'charles' and 'turgut'; -- bu sartimizda c ve t(t dahil degil) harfleri arasindaki yazar isimleriniz yazdirir
 ​
 -- sayfa sayisi 200 den buyuk kitap ismi 'beyaz dis' olan kitabin ismi puanini getir
-select ad ,puan from kitap where sayfasayisi>200 and ad='beyaz dis';
+
 ​
 -- kitap no su 98 54 21 76 olan kitapno ve isimlerini ylistlele
-select kitapno,ad from kitap where kitapno in (98,54,21,76);
+
 ​
 -- SORU09: İsmi A harfi ile başlayan yazarlari listele
-select ad from yazar where ad like 'a%';-- a ile baslayanlar (a ile bsalasin nasil devam ediyorsa etsin
-select ad from yazar where ad like '%a';-- a ile bitenler 
+
 ​
 -- SORU11: İsminin 2. harfi E olan personeli listeleyin
-select ad from yazar where ad like '_e%';
+
 ​
 -- SORU12: İsminin 2. harfi E olup diğer harflerinde Y olan yazar
-select ad from yazar where ad like '_e%y%'; -- ilk harf bos 2. harf e iki % arasi kelimenin tamamindaki harfi verir
+
 ​
 -- soru isim ilk harfi r ile baslasin ikini hardi ne olursa olssun icinde k harfi bulunan isimleri listele
-select ad from yazar where ad like 'r%k%'; -- _ bu harfi atla demek
+
 ​
 -- soru isminde a harfi olmayan 
-select ad from yazar where ad not like '%a%'; 
+
 ​
 -- SORU14: kitab adi 6 haneli olan kitablari listeleyin
-select ad from kitap where ad like '______';
+
 ​
 -- SORU15: 1. harfi A ve 8. harfi A olan kitap listeleyin
-select ad from kitap where ad like 'a______a%';
